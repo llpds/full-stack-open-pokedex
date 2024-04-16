@@ -26,7 +26,10 @@ const PokemonPage = ({ previous, next }) => {
   const normalAbility = pokemon.abilities.find((ability) => !ability.is_hidden)
   const hiddenAbility = pokemon.abilities.find((ability) => ability.is_hidden === true)
 
-  console.log('hiddenAbility=', hiddenAbility)
+  /* eslint-disable no-console */
+  /* eslint-enable no-console */
+  // or 'no-console': 0
+  //console.log('hiddenAbility=', hiddenAbility)
   return (
     <>
       <div className="links">
