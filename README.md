@@ -1,7 +1,7 @@
 # Full Stack open CI/CD
 
 https://full-stack-open-pokedex-ve7b.onrender.com
-
+https://full-stack-open-pokedex-fly.fly.dev/
 
 
 This repository is used for the CI/CD module of the Full stack open course
