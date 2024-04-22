@@ -3,10 +3,13 @@ name: Deployment pipeline
 on:
   push:
     branches:
-      - main
+      - render
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
 
 jobs:
-  simple_deployment_pipeline:
+  CI:
     timeout-minutes: 5
     runs-on: ubuntu-20.04
     concurrency: deploy-group 
@@ -27,3 +30,16 @@ jobs:
         run: npx playwright install --with-deps
       - name: Run Playwright tests
         run: npx playwright test
+      - uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
+  CD:
+    if: ${{ github.event_name == 'push' }}
+    runs-on: ubuntu-20.04
+    concurrency: deploy-group 
+    steps:
+      - name: Trigger deployment
+        run: curl https://api.render.com/deploy/srv-${{ secrets.RENDER_SERVICE_ID }}?key=${{ secrets.RENDER_API_KEY }}
