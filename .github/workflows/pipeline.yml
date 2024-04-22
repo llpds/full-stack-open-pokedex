@@ -4,9 +4,12 @@ on:
   push:
     branches:
       - render
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
 
 jobs:
-  simple_deployment_pipeline:
+  CI:
     timeout-minutes: 5
     runs-on: ubuntu-20.04
     concurrency: deploy-group 
@@ -33,5 +36,10 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
+  CD:
+    if: ${{ github.event_name == 'push' }}
+    runs-on: ubuntu-20.04
+    concurrency: deploy-group 
+    steps:
       - name: Trigger deployment
         run: curl https://api.render.com/deploy/srv-${{ secrets.RENDER_SERVICE_ID }}?key=${{ secrets.RENDER_API_KEY }}
