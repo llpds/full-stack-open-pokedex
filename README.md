@@ -22,12 +22,3 @@ ex 11.10 - 11.12
 ex 11.13-11.14
   at this moment
     pipeline on:puah:branches: render
-
-    next time try to change main:
-    next time try to change main that main and render will be different and deploy it when on site branch setting: render and on pipeline: main. and watch what happened
-
-    провел тест
-      залил конвеер 12r
-      пулл реквест с главной веткой
-      залил конвеер 13r
-      работа с пулл реквестом, в котором оказались данные с 13r, неожиданное поведение
