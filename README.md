@@ -20,5 +20,4 @@ ex 11.10 - 11.12
     render  (render.com -> settings -> branch: render)
 
 ex 11.13-11.14
-  at this moment
-    pipeline on:puah:branches: render
+    the application is deployed to the render from the master branch
