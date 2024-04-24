@@ -3,7 +3,7 @@ name: Deployment pipeline
 on:
   push:
     branches:
-      - main
+      - render
   pull_request:
     branches: [main]
     types: [opened, synchronize]
@@ -37,7 +37,7 @@ jobs:
           path: playwright-report/
           retention-days: 30
   CD:
-    if: ${{ github.event_name == 'push' }}
+    if: ${{ github.event_name == 'push' && !contains(join(github.event.commits.*.message, ' '), '#skip') }}
     runs-on: ubuntu-20.04
     concurrency: deploy-group 
     steps:
