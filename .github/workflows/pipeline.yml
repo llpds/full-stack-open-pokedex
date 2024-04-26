@@ -47,7 +47,7 @@ jobs:
       
 
   CD:
-    if: ${{ github.event_name == 'push' && !contains(join(github.event.commits.*.message, ' '), '#skip') }}
+    if: ${{ github.event_name == 'pull_request' && !contains(join(github.event.commits.*.message, ' '), '#skip') }}
     runs-on: ubuntu-20.04
     concurrency: deploy-group 
     steps:
