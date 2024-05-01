@@ -15,6 +15,7 @@ jobs:
     concurrency: deploy-group 
     steps:
       - run: echo "CI started"
+      - run: echo "commit https://github.com/${{github.repository}}/commit/${{github.sha}} by ${{github.triggering_actor}} broke the build :("
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
@@ -42,7 +43,9 @@ jobs:
       #   if: failure()
       #   with:
       #     severity: error
-      #     details: Build error!
+      #     text: Build failed.
+      #     description: commit
+      #     details: by broke the build :(
       #     webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       
 
