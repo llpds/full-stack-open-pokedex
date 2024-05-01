@@ -23,6 +23,7 @@ ex 11.13-11.14
     the application is deployed to the render from the master branch
 
   not forget:
+    
     - push into render branch
     - pull request into main
 
