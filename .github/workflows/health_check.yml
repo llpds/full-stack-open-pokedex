@@ -1,12 +1,11 @@
 name: Health check
 
 on:
-  schedule:
-    - cron: "15 15,16 * * *"   # <=== Change this value
   push:
     branches:
       -health_check
-
+  # schedule:
+  #   - cron: "15 15,16 * * *"   # <=== Change this value
 
 jobs:
   health_check:
