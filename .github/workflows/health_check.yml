@@ -2,7 +2,7 @@ name: Health check
 
 on:
   schedule:
-    - cron: "15 13,14 * *"   # <=== Change this value
+    - cron: "15 13,14 * * *"   # <=== Change this value
   push:
     branches:
       -health_check
