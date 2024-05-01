@@ -11,4 +11,4 @@ jobs:
     runs-on: ubuntu-20.04
     concurrency: deploy-group
         steps:
-      - run: echo "works"
+          - run: echo "works"
