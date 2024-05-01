@@ -10,5 +10,5 @@ jobs:
     timeout-minutes: 5
     runs-on: ubuntu-20.04
     concurrency: deploy-group
-        steps:
-          - run: echo "works"
+    steps:
+      - run: echo "works"
