@@ -1,4 +1,4 @@
-name: action doesn't work???
+name: Health check
 
 on:
   push:
@@ -11,4 +11,8 @@ jobs:
     runs-on: ubuntu-20.04
     concurrency: deploy-group
     steps:
-      - run: echo "works"
+      - run: echo "health check"
+      - name: Check the deployed service URL
+        uses: jtalk/url-health-check-action@v4
+        With:
+          url: https://full-stack-open-pokedex-ve7b.onrender.com/health
