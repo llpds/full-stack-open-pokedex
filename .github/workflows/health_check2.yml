@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - health_check
+    schedule:
+      - cron: "20 15,16 * * *"   # <=== Change this value
 
 jobs:
   CI:
