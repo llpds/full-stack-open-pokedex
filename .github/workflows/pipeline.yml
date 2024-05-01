@@ -43,7 +43,8 @@ jobs:
         with:
           text: Build failed
           severity: error
-          description: commit https://github.com/${{github.repository}}/commit/${{github.sha}} by ${{github.triggering_actor}} broke the build :(
+          description:  commit
+          details:  https://github.com/${{github.repository}}/commit/${{github.sha}} by ${{github.triggering_actor}} broke the build :(
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
       
 
