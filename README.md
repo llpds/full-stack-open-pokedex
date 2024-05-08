@@ -17,7 +17,7 @@ Start by running `npm install` inside the project folder
 ex 11.10 - 11.12
   added two branches for deployment (the name of the branch corresponds to the service)
     fly
-    render  (render.com -> settings -> branch: render)
+    render  (render.com -> settings -> branch: render. Only in this exercise to avoid deploying 'fly' content to render)
 
 ex 11.13-11.14
     the application is deployed to the render from the master branch
@@ -25,5 +25,3 @@ ex 11.13-11.14
   not forget:
     - push into render branch
     - pull request into main
-
-    - return Hello.yml back (11.5)
