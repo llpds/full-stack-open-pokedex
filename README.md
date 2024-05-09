@@ -1,27 +1,3 @@
-# Full Stack open CI/CD
+# [FSO part 11] (https://fullstackopen.com/en/part11)
 
-This repository is used for the CI/CD module of the Full stack open course
-
-Fork the repository to complete course exercises
-
-## Commands
-
-Start by running `npm install` inside the project folder
-
-`npm start` to run the webpack dev server
-`npm test` to run tests
-`npm run eslint` to run eslint
-`npm run build` to make a production build
-`npm run start-prod` to run your production build
-
-ex 11.10 - 11.12
-  added two branches for deployment (the name of the branch corresponds to the service)
-    fly
-    render  (render.com -> settings -> branch: render. Only in this exercise to avoid deploying 'fly' content to render)
-
-ex 11.13-11.14
-    the application is deployed to the render from the master branch
-
-  not forget:
-    - push into render branch
-    - pull request into main
+  ex. 11.1 - 11.19
