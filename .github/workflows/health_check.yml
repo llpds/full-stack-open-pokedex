@@ -1,9 +1,9 @@
 name: Health check
 
 on:
-  schedule:
-    - cron: '30 12,11 * * *'
-    - cron: '40 14 * * *'
+  # schedule:
+  #   - cron: '30 12,11 * * *'
+  #   - cron: '40 14 * * *'
   push:
     branches:
       - health_check
